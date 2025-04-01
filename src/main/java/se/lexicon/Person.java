@@ -1,5 +1,7 @@
 package se.lexicon;
 
+import java.util.Objects;
+
 public class Person {
 
     //fields
@@ -7,6 +9,7 @@ public class Person {
     private String firstName;
     private String lastName;
     private String email;
+    AppUser credentials;
 
     //constructor
     public Person(int id, String firstName, String lastName, String email){
@@ -34,6 +37,10 @@ public class Person {
         return email;
     }
 
+    public AppUser getCredentials() {
+        return credentials;
+    }
+
     public void setFirstName(String firstName) {
         if(firstName == null || firstName.trim().isEmpty()){
             throw new IllegalArgumentException("firstname can't be null or empty");
@@ -55,14 +62,30 @@ public class Person {
         this.email = email;
     }
 
-    //other methods
-    public String getSummary(){
-        StringBuilder sb = new StringBuilder();
-        sb.append("Id: ").append(id).append(", Name: ")
-                .append(firstName).append(" ").append(lastName)
-                .append(", email: ").append(email);
-
-        return sb.toString();
+    public void setCredentials(AppUser credentials) {
+        this.credentials = credentials;
     }
 
+    //other methods
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Person person = (Person) o;
+        return id == person.id && Objects.equals(firstName, person.firstName) && Objects.equals(lastName, person.lastName) && Objects.equals(email, person.email);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, firstName, lastName, email);
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "email='" + email + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", id=" + id +
+                '}';
+    }
 }

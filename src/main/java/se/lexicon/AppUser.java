@@ -1,5 +1,7 @@
 package se.lexicon;
 
+import java.util.Objects;
+
 public class AppUser {
 
     //fields
@@ -15,8 +17,6 @@ public class AppUser {
     }
 
     //getters and setters
-
-
     public String getUsername() {
         return username;
     }
@@ -50,9 +50,25 @@ public class AppUser {
         this.role = role;
     }
 
-    //todo: implement methods
     //other methods
-    //equals
-    //hashcode
-    //toString
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        AppUser appUser = (AppUser) o;
+        return Objects.equals(username, appUser.username) && role == appUser.role;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(username, role);
+    }
+
+    @Override
+    public String toString() {
+        return "AppUser{" +
+                "username='" + username + '\'' +
+                ", role=" + role +
+                '}';
+    }
+
 }

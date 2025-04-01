@@ -1,6 +1,7 @@
 package se.lexicon;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class TodoItem {
 
@@ -77,14 +78,27 @@ public class TodoItem {
             return LocalDate.now().isAfter(deadLine);
     }
 
-    public String getSummary(){
-        StringBuilder sb = new StringBuilder();
-        sb.append("Id: ").append(id).append(", Title: ")
-                .append(title).append(", Description: ").append(description)
-                .append(", Deadline: ").append(deadLine).append(", Done: ")
-                .append(done).append(", Creator: ").append(creator);
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        TodoItem todoItem = (TodoItem) o;
+        return id == todoItem.id && done == todoItem.done && Objects.equals(title, todoItem.title) && Objects.equals(description, todoItem.description) && Objects.equals(deadLine, todoItem.deadLine);
+    }
 
-        return sb.toString();
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, title, description, deadLine, done);
+    }
+
+    @Override
+    public String toString() {
+        return "TodoItem{" +
+                "done=" + done +
+                ", deadLine=" + deadLine +
+                ", description='" + description + '\'' +
+                ", title='" + title + '\'' +
+                ", id=" + id +
+                '}';
     }
 }
 
