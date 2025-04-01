@@ -35,21 +35,21 @@ public class Person {
     }
 
     public void setFirstName(String firstName) {
-        if(firstName == null || firstName.isEmpty()){
+        if(firstName == null || firstName.trim().isEmpty()){
             throw new IllegalArgumentException("firstname can't be null or empty");
         }
         this.firstName = firstName;
     }
 
     public void setLastName(String lastName) {
-        if(lastName == null || lastName.isEmpty()){
+        if(lastName == null || lastName.trim().isEmpty()){
             throw new IllegalArgumentException("lastname can't be null or empty");
         }
         this.lastName = lastName;
     }
 
     public void setEmail(String email) {
-        if(email == null || email.isEmpty()){
+        if(email == null || email.trim().isEmpty()){
             throw new IllegalArgumentException("email can't be null or empty");
         }
         this.email = email;

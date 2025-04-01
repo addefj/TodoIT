@@ -50,7 +50,7 @@ public class TodoItem {
     }
 
     public void setTitle(String title) {
-        if(title == null || title.isEmpty()){
+        if(title == null || title.trim().isEmpty()){
             throw new IllegalArgumentException("title can't be null or empty");
         }
         this.title = title;
