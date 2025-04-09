@@ -7,9 +7,6 @@ import java.util.ArrayList;
 
 public interface ITodoItemDAO {
 
-    //fields
-    ArrayList<TodoItem> todoItemList = new ArrayList<>();
-
     //methods
     TodoItem persist(TodoItem todoItem);
     TodoItem findById(int id);

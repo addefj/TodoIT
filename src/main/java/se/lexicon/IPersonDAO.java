@@ -6,9 +6,6 @@ import java.util.ArrayList;
 
 public interface IPersonDAO {
 
-    //fields
-    ArrayList<Person> personList = new ArrayList<>();
-
     //methods
     Person persist(Person person);
     Person findById(int id);

@@ -6,9 +6,6 @@ import java.util.ArrayList;
 
 public interface ITodoItemTaskDAO {
 
-    //fields
-    ArrayList<TodoItemTask> todoItemTaskList = new ArrayList<>();
-
     //methods
     TodoItemTask persist(TodoItemTask todoItemTask);
     TodoItemTask findById(int id);

@@ -6,9 +6,6 @@ import java.util.ArrayList;
 
 public interface IAppUserDAO {
 
-    //fields
-    ArrayList<AppUser> userList = new ArrayList<>();
-
     //methods
     AppUser persist(AppUser appUser);
     AppUser findByUsername(String username);
