@@ -14,7 +14,7 @@ public interface ITodoItemTaskDAO {
     TodoItemTask findById(int id);
     ArrayList<TodoItemTask> findAll();
     ArrayList<TodoItemTask> findByAssignedStatus(boolean assigned);
-    ArrayList<TodoItemTask> findByPersonId(int id); //todo: correct datatype?
+    ArrayList<TodoItemTask> findByPersonId(int personId); //todo: correct datatype?
     void remove(int id);
 
 
