@@ -1,5 +1,7 @@
 package se.lexicon;
 
+import se.lexicon.sequencers.PersonIdSequencer;
+
 import java.util.Objects;
 
 public class Person {
@@ -12,15 +14,14 @@ public class Person {
     AppUser credentials;
 
     //constructor
-    public Person(int id, String firstName, String lastName, String email){
-    this.id = id;
-    setFirstName(firstName);
-    setLastName(lastName);
-    setEmail(email);
+    public Person(String firstName, String lastName, String email) {
+        this.id = PersonIdSequencer.nextId();
+        setFirstName(firstName);
+        setLastName(lastName);
+        setEmail(email);
     }
 
     //getters and setters
-
     public int getId() {
         return id;
     }
@@ -42,21 +43,21 @@ public class Person {
     }
 
     public void setFirstName(String firstName) {
-        if(firstName == null || firstName.trim().isEmpty()){
+        if (firstName == null || firstName.trim().isEmpty()) {
             throw new IllegalArgumentException("firstname can't be null or empty");
         }
         this.firstName = firstName;
     }
 
     public void setLastName(String lastName) {
-        if(lastName == null || lastName.trim().isEmpty()){
+        if (lastName == null || lastName.trim().isEmpty()) {
             throw new IllegalArgumentException("lastname can't be null or empty");
         }
         this.lastName = lastName;
     }
 
     public void setEmail(String email) {
-        if(email == null || email.trim().isEmpty()){
+        if (email == null || email.trim().isEmpty()) {
             throw new IllegalArgumentException("email can't be null or empty");
         }
         this.email = email;

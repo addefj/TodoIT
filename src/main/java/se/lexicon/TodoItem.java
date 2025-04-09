@@ -1,5 +1,7 @@
 package se.lexicon;
 
+import se.lexicon.sequencers.TodoItemSequencer;
+
 import java.time.LocalDate;
 import java.util.Objects;
 
@@ -16,8 +18,8 @@ public class TodoItem {
     //constructor
 
 
-    public TodoItem(int id, String title, String description, boolean done, LocalDate deadLine, Person creator) {
-        this.id = id;
+    public TodoItem(String title, String description, boolean done, LocalDate deadLine, Person creator) {
+        this.id = TodoItemSequencer.nextId();
         setTitle(title);
         setDescription(description);
         setDone(done);
@@ -51,7 +53,7 @@ public class TodoItem {
     }
 
     public void setTitle(String title) {
-        if(title == null || title.trim().isEmpty()){
+        if (title == null || title.trim().isEmpty()) {
             throw new IllegalArgumentException("title can't be null or empty");
         }
         this.title = title;
@@ -74,8 +76,8 @@ public class TodoItem {
     }
 
     //other methods
-    public boolean isOverdue(){
-            return LocalDate.now().isAfter(deadLine);
+    public boolean isOverdue() {
+        return LocalDate.now().isAfter(deadLine);
     }
 
     @Override
