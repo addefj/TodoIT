@@ -1,4 +1,4 @@
-package se.lexicon;
+package se.lexicon.data;
 
 import se.lexicon.model.AppUser;
 
@@ -10,7 +10,7 @@ public interface IAppUserDAO {
     AppUser persist(AppUser appUser);
     AppUser findByUsername(String username);
     ArrayList<AppUser> findAll();
-    void remove(AppUser username);
+    void remove(String username);
 
 
 }

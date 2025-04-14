@@ -1,4 +1,4 @@
-package se.lexicon;
+package se.lexicon.data;
 
 import se.lexicon.model.TodoItem;
 
@@ -13,7 +13,7 @@ public interface ITodoItemDAO {
     ArrayList<TodoItem> findAll();
     ArrayList<TodoItem> findAllByDoneStatus(boolean done);
     ArrayList<TodoItem> findByTitleContains(String title);
-    ArrayList<TodoItem> findByPersonId(int personId); //todo:correct datatype?
+    ArrayList<TodoItem> findByPersonId(int personId);
     ArrayList<TodoItem> findByDeadlineBefore(LocalDate date);
     ArrayList<TodoItem> findByDeadlineAfter(LocalDate date);
     void remove(int id);

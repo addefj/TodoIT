@@ -8,7 +8,7 @@ import java.util.Objects;
 public class TodoItem {
 
     //fields
-    private int id;
+    private final int id;
     private String title;
     private String description;
     private LocalDate deadLine;
@@ -16,8 +16,6 @@ public class TodoItem {
     private Person creator;
 
     //constructor
-
-
     public TodoItem(String title, String description, boolean done, LocalDate deadLine, Person creator) {
         this.id = TodoItemSequencer.nextId();
         setTitle(title);

@@ -1,4 +1,4 @@
-package se.lexicon;
+package se.lexicon.data;
 
 import se.lexicon.model.Person;
 

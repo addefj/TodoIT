@@ -7,7 +7,7 @@ import java.util.Objects;
 public class TodoItemTask {
 
     //fields
-    private int id;
+    private final int id;
     private boolean assigned;
     private TodoItem todoItem;
     private Person assignee;

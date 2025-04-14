@@ -1,4 +1,4 @@
-package se.lexicon;
+package se.lexicon.data;
 
 import se.lexicon.model.TodoItemTask;
 
@@ -11,7 +11,7 @@ public interface ITodoItemTaskDAO {
     TodoItemTask findById(int id);
     ArrayList<TodoItemTask> findAll();
     ArrayList<TodoItemTask> findByAssignedStatus(boolean assigned);
-    ArrayList<TodoItemTask> findByPersonId(int personId); //todo: correct datatype?
+    ArrayList<TodoItemTask> findByPersonId(int personId);
     void remove(int id);
 
 
