@@ -13,7 +13,7 @@ public class TodoItemTask {
     private Person assignee;
 
     //constructor
-    public TodoItemTask(int id, TodoItem todoItem, Person assignee) {
+    public TodoItemTask(TodoItem todoItem, Person assignee) {
         this.id = TodoItemTaskIdSequencer.nextId();
         setTodoItem(todoItem);
         setAssignee(assignee);
@@ -37,21 +37,17 @@ public class TodoItemTask {
     }
 
     public void setTodoItem(TodoItem todoItem) {
-        if(todoItem == null){
-            throw new IllegalArgumentException("todoItem can't be null");
-        }
+        if(todoItem == null) throw new IllegalArgumentException("todoItem can't be null");
         this.todoItem = todoItem;
     }
 
     public void setAssignee(Person assignee) {
-        if(assignee != null){
-            this.assigned = true;
-        }
+        if(assignee == null) throw new IllegalArgumentException("assignee can't be null");
+        this.assigned = true;
         this.assignee = assignee;
     }
 
     //other methods
-
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;

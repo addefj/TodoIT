@@ -16,11 +16,10 @@ public class TodoItem {
     private Person creator;
 
     //constructor
-    public TodoItem(String title, String description, boolean done, LocalDate deadLine, Person creator) {
+    public TodoItem(String title, String description, LocalDate deadLine, Person creator) {
         this.id = TodoItemSequencer.nextId();
         setTitle(title);
         setDescription(description);
-        setDone(done);
         setDeadLine(deadLine);
         setCreator(creator);
     }
@@ -51,21 +50,22 @@ public class TodoItem {
     }
 
     public void setTitle(String title) {
-        if (title == null || title.trim().isEmpty()) {
-            throw new IllegalArgumentException("title can't be null or empty");
-        }
+        if (title == null || title.trim().isEmpty()) throw new IllegalArgumentException("title can't be null or empty");
         this.title = title;
     }
 
     public void setDescription(String description) {
+        if (description == null || description.trim().isEmpty()) throw new IllegalArgumentException("description can't be null or empty");
         this.description = description;
     }
 
     public void setDeadLine(LocalDate deadLine) {
+        if (deadLine == null || LocalDate.now().isAfter(deadLine)) throw new IllegalArgumentException("deadLine can't be null or before today's date");
         this.deadLine = deadLine;
     }
 
     public void setCreator(Person creator) {
+        if(creator == null) throw new IllegalArgumentException("creator can't be null");
         this.creator = creator;
     }
 

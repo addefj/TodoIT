@@ -1,6 +1,6 @@
-package se.lexicon.data;
+package se.lexicon.dao.impl;
 
-import se.lexicon.model.TodoItem;
+import se.lexicon.dao.ITodoItemTaskDAO;
 import se.lexicon.model.TodoItemTask;
 
 import java.util.ArrayList;

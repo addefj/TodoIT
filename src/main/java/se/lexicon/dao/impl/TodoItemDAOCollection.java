@@ -1,6 +1,6 @@
-package se.lexicon.data;
+package se.lexicon.dao.impl;
 
-import se.lexicon.model.Person;
+import se.lexicon.dao.ITodoItemDAO;
 import se.lexicon.model.TodoItem;
 
 import java.time.LocalDate;

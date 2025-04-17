@@ -21,32 +21,22 @@ public class AppUser {
         return username;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
     public AppRole getRole() {
         return role;
     }
 
     public void setUsername(String username) {
-        if(username == null || username.trim().isEmpty()){
-            throw new IllegalArgumentException("username can't be null or empty");
-        }
+        if(username == null || username.trim().isEmpty()) throw new IllegalArgumentException("username can't be null or empty");
         this.username = username;
     }
 
     public void setPassword(String password) {
-        if (password == null || password.trim().isEmpty()){
-            throw new IllegalArgumentException("password can't be null or empty");
-        }
+        if (password == null || password.trim().isEmpty()) throw new IllegalArgumentException("password can't be null or empty");
         this.password = password;
     }
 
     public void setRole(AppRole role) {
-        if(role == null){
-            throw new IllegalArgumentException("role can't be null");
-        }
+        if(role == null) throw new IllegalArgumentException("role can't be null");
         this.role = role;
     }
 

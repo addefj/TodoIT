@@ -1,5 +1,6 @@
-package se.lexicon.data;
+package se.lexicon.dao.impl;
 
+import se.lexicon.dao.IAppUserDAO;
 import se.lexicon.model.AppUser;
 
 import java.util.ArrayList;
