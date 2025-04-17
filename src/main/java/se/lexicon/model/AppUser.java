@@ -25,6 +25,10 @@ public class AppUser {
         return role;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
     public void setUsername(String username) {
         if(username == null || username.trim().isEmpty()) throw new IllegalArgumentException("username can't be null or empty");
         this.username = username;
